@@ -1,16 +1,17 @@
 <h1>Galerie</h1>
 
-<table id="galerie">
-<?php foreach ($galerie as $iterace) : ?>
+<table  id="galerie">
+<?php for ($i=0; $i <= $galerie['iterace'][0]; $i++) :?>
 <tr>
-<?php for ($sloupec=0; $sloupec<= count($iterace['nahledy']); $sloupec++) : ?>
+<?php for ($sloupcu=0; $sloupcu <= $galerie['sloupcu'][0]; $sloupcu++) :?>
 <td> 
-<a href="<?=$iterace['obrazky'][$sloupec]?>"> 
-<img alt="" src="<?=$iterace['nahledy'][$sloupec]?>">
+<a href="<?= array_shift($galerie['obrazky']) ?>"> 
+<img alt="" src="<?= array_shift($galerie['nahledy']) ?>">
 </a> 
 </td>
-<?php endfor?>
+<?php endfor;?>
 </tr>
-<?php endforeach ?>
+<?php endfor;?>
+
 
 </table>

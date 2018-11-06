@@ -25,7 +25,7 @@ class Galerie
         $slozka->close();
     }
     
-    public function zabal()
+  /*  public function zabal()
     {
         $zabalenaData = array();
         $sloupec = 0;
@@ -44,6 +44,28 @@ class Galerie
             }
             return $zabalenaData;
         }
-        
+    */
+        public function zabal()
+        {
+            $zabalenaData = array();
+            $sloupec = 0;
+            $iterace = 0;
+            $zabalenaData['sloupcu'][0] = $this->sloupcu;
+            
+            foreach ($this->soubory as $soubor)
+            {
+                $zabalenaData['nahledy'][] = $this->slozka .'/'. $soubor;
+                $zabalenaData['obrazky'][] = $this->slozka .'/'. str_replace('_nahled.', '.', $soubor);
+                $zabalenaData['iterace'][0] = $iterace;               
+                
+                if($sloupec == $this->sloupcu)
+                {
+                    $iterace++;
+                    $sloupec = 0;
+                }
+                $sloupec++;
+            }
+            return $zabalenaData;
+        }
         
     }
