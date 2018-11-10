@@ -1,0 +1,27 @@
+<?php 
+$Arnold = new Bojovnik('Arnold', 20, 3, 1);
+echo '<br>';
+echo $Arnold->__toString();
+echo '<br>';
+$Silvester = new Mag('Silvester', 20, 3, 1);
+echo $Silvester->__toString();
+
+// fight
+
+while ($Arnold->nazivu() && $Silvester->nazivu())
+{
+    $Arnold->utoc($Silvester);
+ echo   $Arnold->vratPosledniZpravu();
+ echo '<br>';
+   echo  $Silvester->vratPosledniZpravu();
+   echo '<br>';
+    
+    $Silvester->utoc($Arnold);
+    echo  $Silvester->vratPosledniZpravu();
+    echo '<br>';
+    echo  $Arnold->vratPosledniZpravu();
+    echo '<br>';
+    
+    
+}
+?>

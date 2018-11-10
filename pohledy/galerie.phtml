@@ -1,0 +1,17 @@
+<h1>Galerie</h1>
+
+<table  id="galerie">
+<?php for ($i=0; $i <= $galerie['iterace'][0]; $i++) :?>
+<tr>
+<?php for ($sloupcu=0; $sloupcu <= $galerie['sloupcu'][0]; $sloupcu++) :?>
+<td> 
+<a href="<?= array_shift($galerie['obrazky']) ?>"> 
+<img alt="" src="<?= array_shift($galerie['nahledy']) ?>">
+</a> 
+</td>
+<?php endfor;?>
+</tr>
+<?php endfor;?>
+
+
+</table>
