@@ -1,0 +1,27 @@
+<h2>Diskuze</h2>
+<section>
+<?php foreach($diskuze as $row) : ?>
+
+<div class="diskuzeRow">
+<p class="diskuzeUzivatel"><?= $row['uzivatel'] ?></p>
+<?= $row['zprava'] ?>
+<br>
+<p class="diskuzeDatum"><?= $row['datum'] ?></p>
+<p></p>
+</div>
+<?php endforeach; ?>
+
+<br>
+ 
+<form action="diskuze" method="post">
+Jmeno: <br>
+<input type="text" name="jmeno">
+<br>
+Zprava: <br>
+<input type="text" name="zprava" style='height: 50px;'> <br>
+<br>
+<input type="submit" value="Odeslat">
+</form>
+
+</section>
+<?php var_dump($diskuze) ?>
